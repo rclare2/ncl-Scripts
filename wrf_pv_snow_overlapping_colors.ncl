@@ -36,7 +36,6 @@ begin
     pltres@NoTitles         = True                   ; Avoid auto titles
     mpres                   = True
     times = wrf_user_list_times(a)    
-  ;  res@MainTitle           = fig_title             ; Set fig_title as Main Title
     mpres@mpGeophysicalLineColor = "Black"
     mpres@mpNationalLineColor = "Black" 
     mpres@mpUSStateLineColor = "Black"
@@ -59,10 +58,10 @@ begin
   ; Get WRF variables
     pvo = wrf_user_getvar(a,"pvo",-1)                ; Get potential vorticity data                       
     snow = wrf_user_getvar(a,"SNOWH",-1)             ; Get physical snow depth 
-    p    = wrf_user_getvar(a,"pressure",-1)          ; Get pressure data
+    p = wrf_user_getvar(a,"pressure",-1)             ; Get pressure data
 
   ; Unit conversions 
-    snow	= snow * 39.3701                           ; Convert snow depth to inches
+    snow = snow * 39.3701                            ; Convert snow depth to inches
     snow@units = "in"                                ; Set snow depth units as inches
 
   ; Interpolate to pressure
