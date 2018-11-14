@@ -109,7 +109,7 @@ HEIGHT(0,:,:,:) = height_field
 if (filename .eq. False) then
  strs = str_split(original_file, "_")
  case_no = strs(0)
- case_date = str_join(strs(-2:), "_")
+ case_date = str_join(strs(3:), "_")
  filo = case_no + "_" + case_date + ".nc"
 else
  filo = filename
