@@ -1,6 +1,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;                                                                   ;
-;  This replaces major snow variable values in a file with zeros.   ;
+;  This replaces major snow variable values in a file with zeros,   ;
+;  eliminating all snow in a domain.  I use this primarily for      ;
+;  climate sensitivity testing with the WRF model.                  ;
 ;                                                                   ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -13,13 +15,11 @@ begin
   sn2 = wrf_user_getvar(in,"SNOW", -1)    ;snow water equivalent
   sn3 = wrf_user_getvar(in,"SNOWH", -1)   ;physical snow depth
   
-  mFiles = dimsizes(sn1)
-  nFiles = dimsizes(sn2)
-  oFiles = dimsizes(sn3)
+  nFiles = dimsizes(sn1)
 
-  snowc = new(mFiles,integer)
+  snowc = new(nFiles,integer)
   snow = new(nFiles,integer)
-  snowh = new(oFiles,integer)
+  snowh = new(nFiles,integer)
 
   snowc(:,:,:) = 0
   snow(:,:,:) = 0
