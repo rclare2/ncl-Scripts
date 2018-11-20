@@ -8,6 +8,10 @@
 ;  The use of height and 2 m temperature data is specifically   ;
 ;  for PV analysis.  Other variables can be added easily.       ;
 ;                                                               ;
+;  Ryan Clare                                                   ;
+;  University of Wisconsin-Madison                              ;
+;  November, 2018                                               ;
+;                                                               ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
